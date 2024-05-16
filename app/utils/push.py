@@ -233,7 +233,7 @@ def dict2dingding_mark(info_list):
 
 
 def dingding_send(msg, access_token, secret, msgtype="text", title="灯塔消息推送"):
-    ding_url = "https://oapi.dingtalk.com/robot/send?access_token={}".format(access_token)
+    ding_url = "https://zd-openplatform.bigdatacq.com/robot/send?access_token={}".format(access_token)
     timestamp = str(round(time.time() * 1000))
     secret_enc = secret.encode('utf-8')
     string_to_sign = '{}\n{}'.format(timestamp, secret)
