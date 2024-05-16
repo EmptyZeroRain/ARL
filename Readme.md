@@ -49,18 +49,15 @@
 ```
 cd /opt/
 mkdir docker_arl
-wget -O docker_arl/docker.zip https://github.com/TophantTechnology/ARL/releases/download/v2.6.2/docker.zip
 cd docker_arl
-unzip -o docker.zip
-docker volume create arl_db
+git clone https://github.com/EmptyZeroRain/ARL.git
+cd docker 
 docker compose pull
 docker compose up -d
 ```
 
 
 Ubuntu 下可以直接执行 `apt-get install docker.io docker-compose -y` 安装相关依赖
-
-详细说明可以参考: [Docker 环境安装 ARL](https://tophanttechnology.github.io/ARL-doc/system_install/)
 
 ## 6# 截图
 
@@ -175,17 +172,13 @@ db.user.insert({ username: 'admin',  password: hex_md5('arlsalt!@#'+'admin123') 
 如果在其他目录可以创建软连接，且安装了四个服务分别为`arl-web`, `arl-worker`, `arl-worker-github`, `arl-scheduler`
 
 ```
-wget https://raw.githubusercontent.com/TophantTechnology/ARL/master/misc/setup-arl.sh
+git clone https://github.com/EmptyZeroRain/ARL.git
+cd ARL/misc
 chmod +x setup-arl.sh
 ./setup-arl.sh
 ```
 
-
-## 11# FAQ
-
-请访问如下链接[FAQ](https://tophanttechnology.github.io/ARL-doc/faq/)
-
-## 12# 写在最后
+## 11# 写在最后
 
 目前ARL仅仅只是完成了对资产的部分维度的发现和收集，自动发现过程中难免出现覆盖度不全、不精准、不合理等缺陷的地方还请反馈至我们。  
 
